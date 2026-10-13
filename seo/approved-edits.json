@@ -3,14 +3,20 @@
   "edits": {
     "index.html": {
       "baseline_sha256": "baae5a4d6a97ec97687b5d57e530823898fd5e22d50c0dc7d882286cbbfa2454",
-      "reviewed_sha256": "b484f39976faa35d0e5997f80a3c7786e47c272028f952c3364762ba72dd2dea",
-      "reason": "User-authorized publication: editorial route discovery and sitemap; calculation and data preserved",
-      "runtime_sha256": "70d829a97a7ad1d9365fa63182b4344027b3ff5137137ce5b2c59c87cd501dbf"
+      "reviewed_sha256": "8f163fa1ccfb9d3326bf866e1ab3d69e44621aa60656ab2d6b6fc99f09667f70",
+      "reason": "User-authorized cross-platform navigation and contextual links; source data and calculations preserved",
+      "runtime_sha256": "35b72a37bc8bee1d8efa2b690806e4d620ad21cc2c42e7e2b3ca8a9b13be476f"
     },
     "sitemap.xml": {
       "baseline_sha256": "3b9540a17e9faec0c35bcff94839da057f498281aceda7d5953a366c837f7d25",
       "reviewed_sha256": "6a299f84117ed1320d5e60aad9a43d9b4fee915f27a3cb0dcab0aa134d28d975",
       "reason": "User-authorized publication: editorial route discovery and sitemap; calculation and data preserved"
+    },
+    "404.html": {
+      "baseline_sha256": "45026f0b37a404db173a71d5516e13cd62a25a938b16109575cddc16685b781f",
+      "reviewed_sha256": "c5d23f75faa78698b856715ea45b178b725442ac557a46eec415cbc47ac87927",
+      "reason": "User-authorized cross-platform navigation and contextual links; source data and calculations preserved",
+      "runtime_sha256": "681ab10b71d9254dd284dedda30f382729404ab95b1e2fe5c126b9685c26ba40"
     }
   }
 }
