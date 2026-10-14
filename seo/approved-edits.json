@@ -3,8 +3,8 @@
   "edits": {
     "index.html": {
       "baseline_sha256": "baae5a4d6a97ec97687b5d57e530823898fd5e22d50c0dc7d882286cbbfa2454",
-      "reviewed_sha256": "c42d01f429128ac27b8a77ed98443b778b6c2888cf25f9698d76a01b0a4a5928",
-      "reason": "User-requested simple navigation appearance and stylesheet version; application scripts and source data preserved",
+      "reviewed_sha256": "bac393fd75926060442f9a7f63554c07f1132e733f89d6fa6d4e9169b4e396cb",
+      "reason": "User-requested arrow-free menu styling; application scripts and source data preserved",
       "runtime_sha256": "35b72a37bc8bee1d8efa2b690806e4d620ad21cc2c42e7e2b3ca8a9b13be476f"
     },
     "sitemap.xml": {
