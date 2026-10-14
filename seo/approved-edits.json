@@ -3,8 +3,8 @@
   "edits": {
     "index.html": {
       "baseline_sha256": "baae5a4d6a97ec97687b5d57e530823898fd5e22d50c0dc7d882286cbbfa2454",
-      "reviewed_sha256": "8f163fa1ccfb9d3326bf866e1ab3d69e44621aa60656ab2d6b6fc99f09667f70",
-      "reason": "User-authorized cross-platform navigation and contextual links; source data and calculations preserved",
+      "reviewed_sha256": "d3bee42076e794aeec09b5be69c81dc3b75497390a891acd1d4e7b73b28cb420",
+      "reason": "User-authorized native-menu integration and stylesheet revision; data and calculations preserved",
       "runtime_sha256": "35b72a37bc8bee1d8efa2b690806e4d620ad21cc2c42e7e2b3ca8a9b13be476f"
     },
     "sitemap.xml": {
