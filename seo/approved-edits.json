@@ -17,6 +17,11 @@
       "reviewed_sha256": "c5d23f75faa78698b856715ea45b178b725442ac557a46eec415cbc47ac87927",
       "reason": "User-authorized cross-platform navigation and contextual links; source data and calculations preserved",
       "runtime_sha256": "681ab10b71d9254dd284dedda30f382729404ab95b1e2fe5c126b9685c26ba40"
+    },
+    ".gitignore": {
+      "baseline_sha256": "c10c07440049304b0dedd1799e0d10a15481e66c8de727c724329fc4a836fb21",
+      "reviewed_sha256": "16f664241d8c9e5037aaa3372c03e46ba4666e74d2aa71abc695957e201e94f3",
+      "reason": "User-authorized private environment and credential exclusions; no application/runtime/data change"
     }
   }
 }
