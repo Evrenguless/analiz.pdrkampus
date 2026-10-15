@@ -98,7 +98,7 @@
     if(firstHead) firstHead.textContent=selected?'Konu':'Test';
     body.innerHTML=rowsFor(activeKey).map(row=>{
       const percent=(row.count/denominator)*100;
-      return `<tr><td><span class="rk-ags-table-dot" style="background:${row.color}"></span>${row.label}</td><td><strong>${row.count}</strong></td><td><span class="rk-ags-share"><i style="width:${percent.toFixed(2)}%;background:${row.color}"></i></span><b>%${percent.toLocaleString('tr-TR',{maximumFractionDigits:1})}</b></td></tr>`;
+      return `<tr><td><span class="rk-ags-table-dot" style="background:${row.color}"></span>${row.label}</td><td><strong>${row.count}</strong></td><td><span class="rk-ags-share"><i style="width:${percent.toFixed(2)}%;background:${row.color}"></i></span><b>%${percent.toLocaleString('tr-TR',{maximumFractionDigits:2})}</b></td></tr>`;
     }).join('');
   }
 

@@ -3,9 +3,9 @@
   "edits": {
     "index.html": {
       "baseline_sha256": "baae5a4d6a97ec97687b5d57e530823898fd5e22d50c0dc7d882286cbbfa2454",
-      "reviewed_sha256": "bac393fd75926060442f9a7f63554c07f1132e733f89d6fa6d4e9169b4e396cb",
-      "reason": "User-requested arrow-free menu styling; application scripts and source data preserved",
-      "runtime_sha256": "35b72a37bc8bee1d8efa2b690806e4d620ad21cc2c42e7e2b3ca8a9b13be476f"
+      "reviewed_sha256": "5fa0d2f7f2c3c63a80d3c032cf6ec2345594b0401db981cae89eba793ef0637a",
+      "reason": "User-requested professional, compact score-entry layout; input IDs, limits, input handlers, score/ranking algorithms, analysis data and publish handler preserved",
+      "runtime_sha256": "e04dd9c07bc9d2d7e747b816c75b9374a243bad4364b504597c566788c471564"
     },
     "sitemap.xml": {
       "baseline_sha256": "3b9540a17e9faec0c35bcff94839da057f498281aceda7d5953a366c837f7d25",
@@ -14,9 +14,19 @@
     },
     "404.html": {
       "baseline_sha256": "45026f0b37a404db173a71d5516e13cd62a25a938b16109575cddc16685b781f",
-      "reviewed_sha256": "c5d23f75faa78698b856715ea45b178b725442ac557a46eec415cbc47ac87927",
-      "reason": "User-authorized cross-platform navigation and contextual links; source data and calculations preserved",
+      "reviewed_sha256": "2f34ccb7de4a64ca5c901bfb1f4b644991d890c9cd3cc8bcd4e85d242564996a",
+      "reason": "User-requested campus design, readable spacing and static favicon; calculation/analysis/auth scripts and data preserved",
       "runtime_sha256": "681ab10b71d9254dd284dedda30f382729404ab95b1e2fe5c126b9685c26ba40"
+    },
+    "assets/js/00-favicon.js": {
+      "baseline_sha256": "e54386b57b3c211c7f1c231264e33e36569938686ebd4ac8b8c4f8b1374f0f93",
+      "reviewed_sha256": "5ac35740ef78903d402012fb688521da3f099058606812330424da7c04120316",
+      "reason": "User-requested campus design, readable spacing and static favicon; calculation/analysis/auth scripts and data preserved"
+    },
+    "assets/js/22-ags-topic-distribution.js": {
+      "baseline_sha256": "234a786f9b30eb06109bf4baef147117bf2ecf3719b5d824e25aa08036be0445",
+      "reviewed_sha256": "f1e9809e6c2b69ad925ef07bba89b5550a0ba36cfd9e1ea5ba45717b6cc1d2d1",
+      "reason": "User-reported percentage discrepancy: display at most two decimal places instead of one; numerator, denominator, topics and calculation formula unchanged"
     }
   }
 }

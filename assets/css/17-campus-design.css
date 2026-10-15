@@ -1,0 +1,237 @@
+/* PDR Kampüs visual layer. Calculation/data selectors and scripts are preserved. */
+:root{
+  --campus-font:Manrope,"Plus Jakarta Sans",system-ui,sans-serif;
+  --campus-ink:#183e2d;--campus-muted:#506757;--campus-green:#1e6447;
+  --campus-line:#d8e5d9;--campus-paper:#fff;--campus-bg:#f5f8f4;
+  --rk-bg:var(--campus-bg);--rk-line:var(--campus-line);--rk-teal:var(--campus-green);
+  --rk-sidebar-rail:232px;--rk-sidebar-open:232px;
+}
+html{scroll-padding-top:100px}
+body{background:var(--campus-bg)!important;color:var(--campus-ink)!important;font-family:var(--campus-font)!important;font-size:15px!important;line-height:1.65!important}
+button,input,select,textarea{font-family:var(--campus-font)!important}
+.rk-main{padding:108px 32px 48px!important}
+.rk-main :is(h1,h2,h3,h4){color:var(--campus-ink)!important;line-height:1.35!important;letter-spacing:-.025em!important}
+.rk-main :is(p,small){color:var(--campus-muted)!important;line-height:1.7!important}
+.rk-main p{font-size:14px!important}
+.rk-main small{font-size:12px!important}
+.rk-main :is(.text-xs,.text-sm){font-size:14px!important;line-height:1.6!important}
+.rk-main [class*="text-[10px]"],.rk-main [class*="text-[11px]"]{font-size:12px!important}
+.rk-main :is(.font-mono,[id^="net-"]){font-family:var(--campus-font)!important;font-variant-numeric:tabular-nums}
+:is(button,a,input,select,textarea):focus-visible{outline:3px solid #2b7755!important;outline-offset:3px!important}
+.rk-sidebar,.rk-sidebar:hover,.rk-sidebar:focus-within{background:#fff!important;border-right:1px solid var(--campus-line)!important;box-shadow:none!important}
+.rk-sidebar .rk-brand{padding:6px 9px 24px!important;margin-bottom:14px!important;gap:9px!important;min-height:68px!important}
+.rk-sidebar .rk-brand-name{opacity:1!important;transform:none!important;font:800 21px/1.2 var(--campus-font)!important;color:var(--campus-ink)!important}
+.rk-sidebar .rk-nav{width:100%!important;margin:0 0 5px!important}
+.rk-sidebar .rk-nav-button{width:100%!important;height:auto!important;min-height:48px!important;padding:10px!important;gap:10px!important;white-space:normal!important;color:var(--campus-muted)!important;background:transparent!important;box-shadow:none!important;border-radius:10px!important;overflow:visible!important}
+.rk-sidebar .rk-nav-text{opacity:1!important;transform:none!important;white-space:normal!important;font:650 13px/1.45 var(--campus-font)!important}
+.rk-sidebar .rk-nav-icon{width:24px!important;min-width:24px!important;height:28px!important;background:transparent!important;box-shadow:none!important;color:inherit!important;transform:none!important}
+.rk-sidebar .rk-nav-button:is(:hover,:focus-visible,.active){background:#eaf3e9!important;color:var(--campus-green)!important}
+.rk-sidebar .rk-main-platform-nav{margin-top:20px!important;border-top:1px solid var(--campus-line)!important;padding-top:14px!important}
+.rk-topbar{background:#fffffffa!important;border-bottom:1px solid var(--campus-line)!important;box-shadow:none!important;min-height:76px!important;padding:12px 32px!important}
+.rk-topbar .rk-header-brand-text{font-family:var(--campus-font)!important;font-size:24px!important;color:var(--campus-ink)!important}
+.rk-topbar #btn-login{min-height:44px!important;padding:10px 16px!important;background:#fff!important;color:var(--campus-ink)!important;border:1px solid var(--campus-line)!important;border-radius:10px!important;font-size:13px!important;box-shadow:none!important}
+.rk-topbar #user-profile-badge{background:#edf5ee!important;color:var(--campus-ink)!important;border-color:var(--campus-line)!important}
+.rk-topbar #user-name{color:var(--campus-ink)!important}
+.rk-intro.rk-animated-hero{min-height:210px!important;margin-bottom:28px!important;padding:36px!important;background:linear-gradient(115deg,#edf5ee,#f9fbf7)!important;border:1px solid var(--campus-line)!important;border-radius:20px!important;box-shadow:none!important}
+.rk-animated-hero #rk-animated-hero-title{font-family:Georgia,serif!important;font-weight:500!important;font-size:clamp(32px,3.2vw,48px)!important;line-height:1.2!important;margin:16px 0!important}
+.rk-animated-hero #rk-animated-hero-word{color:var(--campus-green)!important}
+.rk-animated-hero-content>p{max-width:660px!important;font-size:15px!important}
+.rk-animated-word-track{font-size:12px!important;color:var(--campus-muted)!important}
+.rk-animated-orbit{opacity:.35!important}
+.rk-workspace{grid-template-columns:minmax(0,1.3fr) minmax(310px,.8fr)!important;gap:24px!important}
+.rk-calc-panel{gap:20px!important}
+.rk-calc-panel>div,.rk-result-panel>div{background:#fff!important;border:1px solid var(--campus-line)!important;border-radius:16px!important;padding:24px!important;box-shadow:0 8px 24px #1d44300b!important}
+.rk-calc-panel>div:first-child{background:#fff!important;border-color:var(--campus-line)!important}
+body.rk-app-body .rk-calc-panel h2{font-size:16px!important}
+.rk-calc-panel>div:first-child .space-y-2{display:grid!important;grid-template-columns:1fr!important;gap:12px!important}
+.rk-calc-panel>div:first-child .space-y-2>div{min-height:82px!important;padding:14px!important;background:#f7faf6!important;border:1px solid var(--campus-line)!important;gap:12px!important}
+.rk-calc-panel>div:first-child .space-y-2>div>div:first-child{width:auto!important;flex:1 1 auto!important;min-width:0!important}
+.rk-calc-panel>div:first-child .space-y-2>div>div:last-child{width:auto!important;flex:0 0 auto!important;gap:10px!important}
+.rk-calc-panel input[type=number]{width:48px!important;height:44px!important;padding:6px!important;font-size:16px!important;border:1px solid #b8cdbd!important;border-radius:9px!important;background:#fff!important;color:var(--campus-ink)!important}
+.rk-calc-panel .net-group input{width:78px!important}
+.rk-calc-panel .space-y-2 [id^=net-]{min-width:48px!important;font-size:14px!important}
+.rk-calc-panel input::placeholder{color:#506757!important;opacity:1!important}
+.rk-calc-panel #btn-publish-live{background:var(--campus-green)!important;color:#fff!important;border:0!important;min-height:50px!important;font-size:14px!important;white-space:normal!important}
+.rk-result-panel #result-rank-range{font-size:clamp(34px,3.8vw,54px)!important;line-height:1.25!important;white-space:normal!important;overflow:visible!important;color:var(--campus-green)!important}
+.rk-result-panel :is(.text-[10px],.text-[11px]){font-size:12px!important}
+.rk-result-panel .grid.grid-cols-3{gap:16px!important;grid-template-columns:1fr!important}
+.rk-result-panel .grid.grid-cols-3>div{display:flex!important;justify-content:space-between!important;align-items:center!important;gap:12px!important;border-top:1px solid var(--campus-line)!important;padding-top:12px!important;text-align:left!important}
+.rk-content-stage{margin-top:36px!important}
+.rk-content-stage>.tab-content{--rk-section-accent:var(--campus-green)!important;padding:28px!important;border:1px solid var(--campus-line)!important;border-radius:20px!important;background:#fff!important;box-shadow:0 8px 24px #1d44300b!important;margin-bottom:28px!important;scroll-margin-top:100px!important}
+.rk-content-stage>.tab-content::before,.rk-content-stage>.tab-content::after{display:none!important}
+.rk-content-stage>.tab-content>.rk-section-head{padding:0 0 24px!important;margin-bottom:8px!important;border-color:var(--campus-line)!important}
+.rk-section-head h2{font-size:clamp(24px,2vw,30px)!important;font-weight:750!important}
+.rk-section-head p{max-width:760px!important;margin-top:10px!important}
+.rk-content-stage>.tab-content>.rk-section-head>b{background:#eaf3e9!important;color:var(--campus-green)!important;box-shadow:none!important;border-radius:12px!important}
+.rk-content-stage :is(.rk-pa-card,.rk-research-card,.rk-ags-card,.rk-marginal-card,.rk-scenario-card){border-color:var(--campus-line)!important;background:#fff!important;border-radius:16px!important;box-shadow:none!important}
+.rk-content-stage :is(.rk-pa-welcome,.rk-research-hero,.rk-ags-hero){padding:24px!important;background:#f2f7f1!important;border-color:var(--campus-line)!important}
+.rk-pa-welcome h3{font-family:var(--campus-font)!important;font-size:26px!important}
+.rk-content-stage :is(.rk-pa-kpi,.rk-research-kpis article){padding:20px!important;background:#f7faf6!important;border-color:var(--campus-line)!important;border-radius:14px!important}
+.rk-content-stage :is(.rk-pa-kpi strong,.rk-research-kpis strong){font:750 30px/1.3 var(--campus-font)!important;color:var(--campus-ink)!important;font-variant-numeric:tabular-nums}
+.rk-content-stage :is(.rk-pa-kpi-head,.rk-pa-live,.rk-pa-kpi small,.rk-research-kpis span,.rk-research-kpis small){font-size:12px!important;line-height:1.5!important;color:var(--campus-muted)!important}
+.rk-content-stage :is(.rk-pa-layout,.rk-pa-bottom,.rk-research-grid,.rk-ags-grid){gap:24px!important}
+.rk-content-stage :is(.rk-pa-card-head,.rk-card-heading,.rk-ags-card-head){padding:20px!important;gap:14px!important}
+.rk-content-stage :is(.rk-pa-card-head h4,.rk-card-heading h3,.rk-ags-card-head h3){font:750 18px/1.4 var(--campus-font)!important;color:var(--campus-ink)!important}
+.rk-content-stage :is(.rk-pa-card-head span,.rk-card-heading span,.rk-ags-card-head span,.rk-research-kicker,.rk-marginal-kicker,.rk-ags-kicker){font:750 11px/1.5 var(--campus-font)!important;color:var(--campus-green)!important;letter-spacing:.07em!important}
+.rk-content-stage :is(.rk-pa-bars,.rk-pa-chart-box){padding:20px!important}
+.rk-content-stage :is(.rk-pa-bar-row,.rk-topic-row){min-height:38px!important;gap:12px!important}
+.rk-content-stage :is(.rk-pa-bar-row span,.rk-pa-bar-row b,.rk-topic-row>span,.rk-topic-row>b,.rk-asdep-timeline p){font-size:13px!important;line-height:1.5!important;color:var(--campus-muted)!important}
+.rk-content-stage .rk-marginal-test{padding:14px!important;min-height:72px!important}
+.rk-content-stage .rk-marginal-test span{font-size:13px!important}
+.rk-content-stage .rk-marginal-test strong{font-size:18px!important}
+/* Tables keep their columns. Narrow screens scroll the table rather than shrinking text. */
+.rk-main :is(.rk-historical-table-wrap,.rk-scenario-table-wrap,.rk-topic-table-wrap,.rk-ags-table-wrap,.overflow-x-auto){overflow:auto!important;max-width:100%!important;max-height:560px!important;overscroll-behavior-inline:contain;scrollbar-width:thin;scrollbar-color:#a4bfa9 #f2f7f1}
+body.rk-app-body .rk-main table{width:100%!important;border-collapse:separate!important;border-spacing:0!important;font:14px/1.65 var(--campus-font)!important;color:var(--campus-ink)!important;min-width:640px!important;font-variant-numeric:tabular-nums}
+body.rk-app-body .rk-main :is(.rk-historical-table,.rk-scenario-table){min-width:780px!important}
+body.rk-app-body .rk-main .rk-ags-table{min-width:420px!important}
+body.rk-app-body .rk-main table th{padding:16px 20px!important;font:750 12px/1.6 var(--campus-font)!important;text-transform:none!important;letter-spacing:0!important;color:#31573e!important;background:#edf5eb!important;border-bottom:1px solid #c9dccd!important;white-space:normal!important;vertical-align:bottom!important}
+body.rk-app-body .rk-main table td{font:14px/1.65 var(--campus-font)!important;padding:18px 20px!important;border-bottom:1px solid #e1ebe1!important;white-space:normal!important;vertical-align:top!important;color:var(--campus-ink)!important;background:#fff!important}
+body.rk-app-body .rk-main table tbody tr:nth-child(even) td{background:#f7faf6!important}
+body.rk-app-body .rk-main table tbody tr:hover td{background:#edf5eb!important}
+body.rk-app-body .rk-main table td :is(span,small,p,b,strong){font-size:13px!important;line-height:1.65!important}
+body.rk-app-body .rk-main table td strong{color:var(--campus-ink)!important;font-weight:750!important}
+body.rk-app-body .rk-main table th:first-child,body.rk-app-body .rk-main table td:first-child{min-width:160px!important}
+.rk-main .rk-topic-table td:last-child{min-width:280px!important}
+.rk-main :is(.rk-ags-test-button,.rk-distribution-tab,.rk-real-distribution-tab){min-height:44px!important;padding:10px 14px!important;font-size:13px!important}
+.rk-main :is(.rk-stat-card span,.rk-stat-card small){font-size:12px!important;color:var(--campus-muted)!important}
+.rk-main .rk-stat-card{background:#fff!important;border-color:var(--campus-line)!important}
+.pk-network-footer,.rk-footer{font-family:var(--campus-font)!important;background:#eef5ed!important;color:var(--campus-ink)!important;border-color:var(--campus-line)!important}
+.rk-footer :is(p,a,small){font-size:13px!important;line-height:1.7!important;color:var(--campus-muted)!important}
+@media(min-width:681px){
+ .rk-sidebar,.rk-sidebar:hover,.rk-sidebar:focus-within{width:232px!important;padding:18px 12px!important;overflow-y:auto!important}
+ .rk-main,.rk-main+footer,footer.rk-footer,footer.w-full.bg-slate-950{width:calc(100% - 232px)!important;margin-left:232px!important}
+ .rk-topbar{left:232px!important;width:calc(100% - 232px)!important;margin-left:0!important}
+}
+@media(max-width:1240px){.rk-workspace{grid-template-columns:1fr!important}.rk-result-panel .grid.grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))!important}.rk-result-panel .grid.grid-cols-3>div{display:block!important}.rk-pa-layout,.rk-pa-bottom,.rk-research-grid,.rk-ags-grid,.rk-marginal-grid{grid-template-columns:1fr!important}}
+@media(max-width:900px) and (min-width:681px){
+ :root{--rk-sidebar-rail:76px;--rk-sidebar-open:250px}
+ .rk-sidebar{width:76px!important;padding:18px 10px!important}
+ .rk-sidebar:hover,.rk-sidebar:focus-within{width:250px!important;box-shadow:8px 0 30px #183e2d18!important}
+ .rk-sidebar:not(:hover):not(:focus-within) :is(.rk-nav-text,.rk-brand-name){opacity:0!important}
+ .rk-sidebar .rk-nav{width:224px!important}.rk-sidebar .rk-nav-button{min-height:48px!important;white-space:nowrap!important}
+ .rk-main,.rk-main+footer,footer.rk-footer,footer.w-full.bg-slate-950{width:calc(100% - 76px)!important;margin-left:76px!important}
+ .rk-topbar{left:76px!important;width:calc(100% - 76px)!important}
+}
+@media(max-width:680px){
+ .rk-main{padding:94px 16px 32px!important;width:100%!important;margin-left:0!important}
+ .rk-topbar{left:0!important;width:100%!important;margin-left:0!important;padding:12px 16px!important;min-height:68px!important}
+ .rk-topbar .rk-header-brand-text{font-size:20px!important}.rk-topbar #btn-login{padding:8px 10px!important;font-size:12px!important}
+ .rk-intro.rk-animated-hero{padding:28px 18px!important;min-height:210px!important;margin-bottom:20px!important}
+ .rk-animated-hero #rk-animated-hero-title{font-size:34px!important}.rk-animated-hero-content>p{font-size:14px!important}
+ .rk-workspace{display:grid!important;grid-template-columns:1fr!important;gap:18px!important}
+ .rk-calc-panel>div,.rk-result-panel>div{padding:18px!important}
+ .rk-calc-panel>div:first-child .space-y-2>div{flex-wrap:wrap!important;gap:10px!important;padding:14px!important}
+ .rk-calc-panel>div:first-child .space-y-2>div>div:first-child{flex-basis:100%!important}
+ .rk-calc-panel>div:first-child .space-y-2>div>div:last-child{width:100%!important;justify-content:space-between!important}
+ .rk-calc-panel input[type=number]{width:58px!important;height:46px!important}
+ .rk-result-panel .grid.grid-cols-3{grid-template-columns:1fr!important}
+ .rk-result-panel .grid.grid-cols-3>div{display:flex!important}
+ .rk-content-stage>.tab-content{padding:18px!important;border-radius:16px!important;margin-bottom:22px!important}
+ .rk-section-head h2{font-size:24px!important}.rk-content-stage>.tab-content>.rk-section-head>b{width:40px!important;height:40px!important;min-width:40px!important;font-size:16px!important}
+ .rk-pa-kpis,.rk-research-kpis{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important;padding:14px!important}
+ .rk-content-stage .rk-pa-kpi{padding:14px!important}.rk-content-stage .rk-pa-kpi strong{font-size:26px!important}
+ body.rk-app-body .rk-main table th,body.rk-app-body .rk-main table td{padding:14px 16px!important}
+ .rk-footer{width:100%!important;margin-left:0!important}
+}
+@media(prefers-reduced-motion:reduce){.rk-main *,.rk-sidebar *{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+/* Override the legacy application's body-specific theme without changing its runtime. */
+body.rk-app-body{font-family:var(--campus-font)!important;color:var(--campus-ink)!important;background:var(--campus-bg)!important;--rk-fg:#183e2d;--rk-border:#d8e5d9;--rk-card:#fff;--rk-navy:#183e2d}
+body.rk-app-body .rk-calc-panel input[type=number]{width:48px!important;height:44px!important;min-width:48px!important;flex-shrink:0!important}
+body.rk-app-body footer.rk-footer{background:#eef5ed!important;color:var(--campus-ink)!important;border-color:var(--campus-line)!important;filter:none!important}
+body.rk-app-body footer.rk-footer :is(h2,a,p,span){color:var(--campus-muted)!important}
+@media(max-width:680px){body.rk-app-body .rk-calc-panel input[type=number]{width:58px!important;height:46px!important}}
+
+body.rk-app-body .rk-main{background:var(--campus-bg)!important}
+
+.rk-calc-panel .rk-input-label{display:grid;gap:6px;justify-items:center;font:650 12px/1.4 var(--campus-font);color:var(--campus-muted)}
+.rk-calc-panel .dy-group{gap:8px!important;align-items:end!important}
+body.rk-app-body .rk-main :is(h2,h3,h4){font-family:var(--campus-font)!important}
+/* One surface per workspace/section: inner charts and tables share its full width. */
+body.rk-app-body .rk-main .rk-calc-panel,
+body.rk-app-body .rk-main .rk-result-panel{padding:24px!important;border:1px solid var(--campus-line)!important;border-radius:16px!important;background:#fff!important;box-shadow:none!important;gap:24px!important}
+body.rk-app-body .rk-main .rk-calc-panel>div,
+body.rk-app-body .rk-main .rk-result-panel>div{padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+body.rk-app-body .rk-main .rk-calc-panel>div:first-child .space-y-2{gap:0!important}
+body.rk-app-body .rk-main .rk-calc-panel>div:first-child .space-y-2>div{padding:14px 0!important;background:transparent!important;border:0!important;border-bottom:1px solid #e1ebe1!important;border-radius:0!important}
+body.rk-app-body .rk-main .rk-calc-panel>div:nth-child(2){padding-top:20px!important;border-top:1px solid var(--campus-line)!important}
+body.rk-app-body .rk-main .rk-content-stage>.tab-content{padding:24px!important;background:#fff!important;box-shadow:none!important;border-radius:16px!important}
+body.rk-app-body .rk-main .rk-content-stage>.tab-content>div,
+body.rk-app-body .rk-main .rk-content-stage>.tab-content>section{padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;overflow:visible!important}
+body.rk-app-body .rk-main :is(.rk-personal-dashboard,.rk-ags-shell,.rk-research-shell,.rk-scenario-card,.rk-marginal-card,.rk-historical-appointments,.rk-oabt-distribution-card,.rk-real-distribution-card){padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+body.rk-app-body .rk-main :is(.rk-pa-layout,.rk-pa-bottom,.rk-research-grid,.rk-ags-grid){padding:0!important;gap:32px!important}
+body.rk-app-body .rk-main :is(.rk-pa-card,.rk-research-card,.rk-ags-card){padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+body.rk-app-body .rk-main :is(.rk-pa-card-head,.rk-card-heading,.rk-ags-card-head){padding:0 0 16px!important;margin-bottom:16px!important;border-bottom:1px solid var(--campus-line)!important}
+body.rk-app-body .rk-main :is(.rk-pa-welcome,.rk-research-hero,.rk-ags-hero){padding:0 0 20px!important;background:transparent!important;border:0!important;border-radius:0!important}
+body.rk-app-body .rk-main :is(.rk-pa-chart-box,.rk-pa-bars,.rk-pa-score-body){padding:0!important}
+body.rk-app-body .rk-main :is(.rk-pa-kpis,.rk-research-kpis,.rk-ags-overview){padding:0!important;gap:16px!important;margin:0 0 24px!important}
+body.rk-app-body .rk-main :is(.rk-pa-kpi,.rk-research-kpis article,.rk-ags-stat){padding:16px 0!important;border:0!important;border-bottom:1px solid var(--campus-line)!important;border-radius:0!important;background:transparent!important}
+body.rk-app-body .rk-main .rk-ags-switch{padding:0 0 24px!important}
+body.rk-app-body .rk-main .rk-ags-test-btn{font-size:13px!important;min-height:42px!important}
+body.rk-app-body .rk-main :is(.rk-marginal-card::before,.rk-marginal-card::after,.rk-research-hero::after){display:none!important}
+body.rk-app-body .rk-main .rk-result-panel>div>div{box-shadow:none!important}
+@media(max-width:680px){
+ body.rk-app-body .rk-main{padding-left:12px!important;padding-right:12px!important}
+ body.rk-app-body .rk-main .rk-calc-panel,
+ body.rk-app-body .rk-main .rk-result-panel,
+ body.rk-app-body .rk-main .rk-content-stage>.tab-content{padding:16px!important;border-radius:12px!important}
+ body.rk-app-body .rk-main :is(.rk-pa-layout,.rk-pa-bottom,.rk-research-grid,.rk-ags-grid){gap:28px!important}
+ body.rk-app-body .rk-main :is(.rk-pa-card,.rk-research-card,.rk-ags-card){padding:0!important}
+}
+body.rk-app-body .rk-main :is(.rk-workspace,.rk-content-stage,.rk-intro,.rk-stat-strip){width:100%!important;max-width:none!important;margin-left:0!important;margin-right:0!important}
+body.rk-app-body .rk-main :is(#tab-overview,#tab-simulator,#tab-matches,#tab-leaderboard,#tab-historical,#tab-research,#tab-ags){background:#fff!important}
+/* The topic table gets a complete row instead of sharing half the page with its chart. */
+body.rk-app-body .rk-main .rk-ags-grid{grid-template-columns:1fr!important}
+body.rk-app-body .rk-main .rk-ags-chart-wrap{height:320px!important}
+
+body.rk-app-body .rk-main .rk-share-explanation{caption-side:bottom;text-align:left;padding:16px 0 0;color:var(--campus-muted);font:12px/1.65 var(--campus-font)}
+/* Aligned score-entry worksheet; no nested form cards. */
+body.rk-app-body .rk-main .rk-calculator{--score-cell:64px;--score-gap:8px;gap:20px!important}
+body.rk-app-body .rk-main .rk-calculator .rk-calculator-heading{padding:0 0 24px;margin-bottom:24px;border-bottom:1px solid var(--campus-line)}
+body.rk-app-body .rk-main .rk-calculator .rk-calculator-eyebrow{display:block;margin-bottom:10px;font:750 11px/1.5 var(--campus-font);letter-spacing:.1em;color:var(--campus-green)}
+body.rk-app-body .rk-main .rk-calculator .rk-calculator-heading h2{font:750 25px/1.3 var(--campus-font)!important;margin:0 0 10px!important;letter-spacing:-.04em!important}
+body.rk-app-body .rk-main .rk-calculator .rk-calculator-heading p{margin:0!important;font-size:14px!important;max-width:540px}
+body.rk-app-body .rk-main .rk-calculator .rk-exam-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
+body.rk-app-body .rk-main .rk-calculator .rk-exam-heading h3{margin:0 0 4px!important;font:750 16px/1.4 var(--campus-font)!important}
+body.rk-app-body .rk-main .rk-calculator .rk-exam-heading div>span{font-size:12px;color:var(--campus-muted)}
+body.rk-app-body .rk-main .rk-calculator :is(.rk-total-net,.rk-exam-tag){flex:none;padding:7px 10px;border-radius:7px;background:#edf5eb;border:0;color:var(--campus-green);font:750 12px/1.4 var(--campus-font);font-variant-numeric:tabular-nums}
+body.rk-app-body .rk-main .rk-calculator .rk-score-columns,
+body.rk-app-body .rk-main .rk-calculator .rk-score-row{display:grid!important;grid-template-columns:minmax(0,1fr) calc(var(--score-cell)*3 + var(--score-gap)*2);align-items:center;gap:16px}
+body.rk-app-body .rk-main .rk-calculator .rk-score-columns{padding:0 0 10px;border-bottom:1px solid var(--campus-line);color:var(--campus-muted);font:650 11px/1.5 var(--campus-font)}
+body.rk-app-body .rk-main .rk-calculator .rk-score-columns>div{display:grid;grid-template-columns:repeat(3,var(--score-cell));gap:var(--score-gap);text-align:center}
+body.rk-app-body .rk-main .rk-calculator .rk-score-row{min-height:78px;padding:14px 0;border-bottom:1px solid #e7eee6;background:transparent;border-radius:0}
+body.rk-app-body .rk-main .rk-calculator .rk-score-rows .rk-score-row:last-child{border-bottom:0}
+body.rk-app-body .rk-main .rk-calculator .rk-score-subject{display:grid;gap:4px;min-width:0}
+body.rk-app-body .rk-main .rk-calculator .rk-score-subject strong{font:650 14px/1.4 var(--campus-font);color:var(--campus-ink)}
+body.rk-app-body .rk-main .rk-calculator .rk-score-subject small{font-size:11px!important;line-height:1.4!important}
+body.rk-app-body .rk-main .rk-calculator .rk-score-entry{display:flex;align-items:center;justify-content:flex-end;gap:var(--score-gap);min-width:0}
+body.rk-app-body .rk-main .rk-calculator .rk-score-dy{display:flex;align-items:center!important;gap:var(--score-gap)!important}
+body.rk-app-body .rk-main .rk-calculator .rk-input-label{display:block;position:relative;width:var(--score-cell)}
+body.rk-app-body .rk-main .rk-calculator .rk-input-label>span{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+body.rk-app-body .rk-main .rk-calculator input[type=number]{appearance:textfield!important;width:var(--score-cell)!important;min-width:0!important;max-width:100%!important;height:46px!important;margin:0!important;padding:9px 6px!important;border:1px solid #c8d8ca!important;border-radius:8px!important;background:#fff!important;color:var(--campus-ink)!important;box-shadow:none!important;text-align:center!important;font:650 16px/1 var(--campus-font)!important;font-variant-numeric:tabular-nums}
+body.rk-app-body .rk-main .rk-calculator input[type=number]:focus{background:#f3f8f1!important;border-color:var(--campus-green)!important;outline:2px solid #1e64471a!important;outline-offset:1px!important}
+body.rk-app-body .rk-main .rk-calculator .rk-score-value{display:block!important;flex:0 0 var(--score-cell);width:var(--score-cell)!important;padding:0!important;text-align:center!important;color:var(--campus-green)!important;font:750 14px/1.4 var(--campus-font)!important;font-variant-numeric:tabular-nums;white-space:normal!important}
+body.rk-app-body .rk-main .rk-calculator .rk-oabt-inputs{border-top:1px solid var(--campus-line)!important;padding-top:22px!important}
+body.rk-app-body .rk-main .rk-calculator .rk-calculator-method{font-size:12px!important;margin:0!important;padding-top:4px!important}
+body.rk-app-body .rk-main .rk-calculator #btn-publish-live{display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px!important;padding:11px 16px!important;border:1px solid #c8d8ca!important;border-radius:8px!important;background:#f2f7f0!important;color:var(--campus-green)!important;box-shadow:none!important;font:750 13px/1.4 var(--campus-font)!important}
+body.rk-app-body .rk-main .rk-calculator #btn-publish-live:hover{background:#e5f0e3!important;border-color:var(--campus-green)!important}
+body.rk-app-body .rk-main .rk-calculator #btn-publish-live svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linejoin:round}
+@media(max-width:680px){
+ body.rk-app-body .rk-main .rk-calculator{--score-cell:54px;--score-gap:6px;gap:18px!important}
+ body.rk-app-body .rk-main .rk-calculator .rk-score-columns,
+ body.rk-app-body .rk-main .rk-calculator .rk-score-row{gap:10px}
+ body.rk-app-body .rk-main .rk-calculator .rk-score-subject strong{font-size:13px}
+ body.rk-app-body .rk-main .rk-calculator .rk-calculator-heading h2{font-size:23px!important}
+ body.rk-app-body .rk-main .rk-calculator .rk-score-row{min-height:78px}
+}
+@media(max-width:360px){
+ body.rk-app-body .rk-main .rk-calculator{--score-cell:48px;--score-gap:5px}
+ body.rk-app-body .rk-main .rk-calculator .rk-score-subject strong{font-size:12px}
+}
+body.rk-app-body #rk-score-rows{display:block!important}
+body.rk-app-body #rk-score-rows .rk-score-row{display:grid!important;min-height:78px!important;padding:14px 0!important;grid-template-columns:minmax(0,1fr) calc(var(--score-cell)*3 + var(--score-gap)*2);gap:16px!important}
+body.rk-app-body #rk-score-rows .rk-score-subject,
+body.rk-app-body #rk-score-rows .rk-score-entry{width:auto!important;min-width:0!important}
+body.rk-app-body #rk-score-rows .rk-score-entry{flex:initial!important;gap:var(--score-gap)!important}
+body.rk-app-body #dy-input-notice{font:12px/1.65 var(--campus-font)!important;background:transparent!important;border:0!important;padding:0!important;margin:0!important}
+@media(max-width:680px){body.rk-app-body #rk-score-rows .rk-score-row{gap:10px!important}}
+body.rk-app-body #net-oabt.rk-score-value{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important}

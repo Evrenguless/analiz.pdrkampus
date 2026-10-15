@@ -18,9 +18,9 @@
 <meta property="og:image" content="https://analiz.pdrkampus.com/assets/img/pdrkampus-logo.png"/>
 <!-- Favicon -->
 <link rel="stylesheet" href="assets/css/00-logo-asset.css">
-<link id="rk-favicon" rel="icon" type="image/png"/>
-<link id="rk-apple-touch-icon" rel="apple-touch-icon"/>
-<script src="assets/js/00-favicon.js"></script>
+<link id="rk-favicon" rel="icon" type="image/svg+xml" href="assets/img/favicon.svg"/>
+<link id="rk-apple-touch-icon" rel="apple-touch-icon" href="assets/img/pdrkampus-logo.png"/>
+<script src="assets/js/00-favicon.js?v=20261015-1"></script>
 <!-- Tailwind CSS CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- Chart.js CDN -->
@@ -28,7 +28,7 @@
 <!-- Supabase JS SDK -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="assets/css/01-base.css">
 <script src="assets/js/01-navigation.js"></script>
 <link rel="stylesheet" href="assets/css/02-layout.css">
@@ -184,147 +184,20 @@
     </div>
   </div>
 </section>
-<section class="rk-workspace"><div class="rk-calc-panel">
-<!-- MEB-AGS Kartı -->
-<div class="bg-slate-900/80 backdrop-blur-xl border border-slate-800/80 rounded-3xl p-4 shadow-xl">
-<div class="flex justify-between items-center mb-3 pb-2 border-b border-slate-800/80">
-<h2 class="text-xs font-bold text-indigo-300 flex items-center gap-1.5">
-<span>📚 MEB-AGS Testleri (80 Soru - %50)</span>
-</h2>
-<span class="text-[11px] text-indigo-300 bg-indigo-950/80 border border-indigo-700/50 px-2.5 py-0.5 rounded-lg font-bold font-mono" id="total-ags-net-badge">0.00 Net</span>
+<section class="rk-workspace"><div class="rk-calc-panel rk-calculator" aria-labelledby="rk-calculator-title">
+<div class="rk-exam-block rk-ags-inputs">
+  <header class="rk-calculator-heading"><span class="rk-calculator-eyebrow">AGS + PDR ÖABT</span><h2 id="rk-calculator-title">Netlerini gir, sonucunu gör.</h2><p>Doğru ve yanlış sayılarını yaz. Puan ve sıralama tahminin otomatik güncellensin.</p></header>
+  <div class="rk-exam-heading"><div><h3>MEB-AGS</h3><span>80 soru · %50 ağırlık</span></div><span class="rk-total-net" id="total-ags-net-badge">0.00 Net</span></div>
+  <div class="rk-score-columns" aria-hidden="true"><span>Test</span><div><span>Doğru</span><span>Yanlış</span><span>Net</span></div></div>
+  <div class="rk-score-rows space-y-2" id="rk-score-rows"><div class="rk-score-row"><div class="rk-score-subject"><strong>Sözel Yetenek</strong><small>15 soru · Ortalama 8,3</small></div><div class="rk-score-entry"><div class="dy-group rk-score-dy"><label class="rk-input-label"><span>Doğru</span><input inputmode="numeric" aria-label="Sözel Yetenek doğru sayısı" class="rk-score-input w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="sozel-d" max="15" min="0" oninput="handleInputChange()" placeholder="D" type="number"/></label><label class="rk-input-label"><span>Yanlış</span><input inputmode="numeric" aria-label="Sözel Yetenek yanlış sayısı" class="rk-score-input w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="sozel-y" max="15" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/></label></div><div class="net-group hidden"><input class="w-20 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-indigo-300 font-bold focus:border-indigo-500 outline-none" id="sozel-net" max="15" min="-3.75" oninput="handleInputChange()" placeholder="Net" step="0.25" type="number"/></div><span class="rk-score-value" id="net-sozel" aria-label="Sözel Yetenek neti">0.00</span></div></div><div class="rk-score-row"><div class="rk-score-subject"><strong>Sayısal Yetenek</strong><small>15 soru · Ortalama 3,4</small></div><div class="rk-score-entry"><div class="dy-group rk-score-dy"><label class="rk-input-label"><span>Doğru</span><input inputmode="numeric" aria-label="Sayısal Yetenek doğru sayısı" class="rk-score-input w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="sayisal-d" max="15" min="0" oninput="handleInputChange()" placeholder="D" type="number"/></label><label class="rk-input-label"><span>Yanlış</span><input inputmode="numeric" aria-label="Sayısal Yetenek yanlış sayısı" class="rk-score-input w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="sayisal-y" max="15" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/></label></div><div class="net-group hidden"><input class="w-20 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-indigo-300 font-bold focus:border-indigo-500 outline-none" id="sayisal-net" max="15" min="-3.75" oninput="handleInputChange()" placeholder="Net" step="0.25" type="number"/></div><span class="rk-score-value" id="net-sayisal" aria-label="Sayısal Yetenek neti">0.00</span></div></div><div class="rk-score-row"><div class="rk-score-subject"><strong>Tarih</strong><small>6 soru · Ortalama 2,7</small></div><div class="rk-score-entry"><div class="dy-group rk-score-dy"><label class="rk-input-label"><span>Doğru</span><input inputmode="numeric" aria-label="Tarih doğru sayısı" class="rk-score-input w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="tarih-d" max="6" min="0" oninput="handleInputChange()" placeholder="D" type="number"/></label><label class="rk-input-label"><span>Yanlış</span><input inputmode="numeric" aria-label="Tarih yanlış sayısı" class="rk-score-input w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="tarih-y" max="6" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/></label></div><div class="net-group hidden"><input class="w-20 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-indigo-300 font-bold focus:border-indigo-500 outline-none" id="tarih-net" max="6" min="-1.5" oninput="handleInputChange()" placeholder="Net" step="0.25" type="number"/></div><span class="rk-score-value" id="net-tarih" aria-label="Tarih neti">0.00</span></div></div><div class="rk-score-row"><div class="rk-score-subject"><strong>Türkiye Coğrafyası</strong><small>6 soru · Ortalama 2,2</small></div><div class="rk-score-entry"><div class="dy-group rk-score-dy"><label class="rk-input-label"><span>Doğru</span><input inputmode="numeric" aria-label="Türkiye Coğrafyası doğru sayısı" class="rk-score-input w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="cografya-d" max="6" min="0" oninput="handleInputChange()" placeholder="D" type="number"/></label><label class="rk-input-label"><span>Yanlış</span><input inputmode="numeric" aria-label="Türkiye Coğrafyası yanlış sayısı" class="rk-score-input w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="cografya-y" max="6" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/></label></div><div class="net-group hidden"><input class="w-20 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-indigo-300 font-bold focus:border-indigo-500 outline-none" id="cografya-net" max="6" min="-1.5" oninput="handleInputChange()" placeholder="Net" step="0.25" type="number"/></div><span class="rk-score-value" id="net-cografya" aria-label="Türkiye Coğrafyası neti">0.00</span></div></div><div class="rk-score-row"><div class="rk-score-subject"><strong>Eğitim Bilimleri ve TMES</strong><small>30 soru · Ortalama 11,2</small></div><div class="rk-score-entry"><div class="dy-group rk-score-dy"><label class="rk-input-label"><span>Doğru</span><input inputmode="numeric" aria-label="Eğitim Bilimleri ve TMES doğru sayısı" class="rk-score-input w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="egitim-d" max="30" min="0" oninput="handleInputChange()" placeholder="D" type="number"/></label><label class="rk-input-label"><span>Yanlış</span><input inputmode="numeric" aria-label="Eğitim Bilimleri ve TMES yanlış sayısı" class="rk-score-input w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="egitim-y" max="30" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/></label></div><div class="net-group hidden"><input class="w-20 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-indigo-300 font-bold focus:border-indigo-500 outline-none" id="egitim-net" max="30" min="-7.5" oninput="handleInputChange()" placeholder="Net" step="0.25" type="number"/></div><span class="rk-score-value" id="net-egitim" aria-label="Eğitim Bilimleri ve TMES neti">0.00</span></div></div><div class="rk-score-row"><div class="rk-score-subject"><strong>Mevzuat</strong><small>8 soru · ÖMK 7528</small></div><div class="rk-score-entry"><div class="dy-group rk-score-dy"><label class="rk-input-label"><span>Doğru</span><input inputmode="numeric" aria-label="Mevzuat doğru sayısı" class="rk-score-input w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="mevzuat-d" max="8" min="0" oninput="handleInputChange()" placeholder="D" type="number"/></label><label class="rk-input-label"><span>Yanlış</span><input inputmode="numeric" aria-label="Mevzuat yanlış sayısı" class="rk-score-input w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="mevzuat-y" max="8" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/></label></div><div class="net-group hidden"><input class="w-20 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-indigo-300 font-bold focus:border-indigo-500 outline-none" id="mevzuat-net" max="8" min="-2.0" oninput="handleInputChange()" placeholder="Net" step="0.25" type="number"/></div><span class="rk-score-value" id="net-mevzuat" aria-label="Mevzuat neti">0.00</span></div></div></div>
 </div>
-<div class="space-y-2 text-xs">
-<!-- Sözel -->
-<div class="bg-slate-950/50 hover:bg-slate-950/80 p-2.5 rounded-2xl border border-slate-800/60 flex items-center justify-between gap-2 transition-colors">
-<div class="w-1/2">
-<span class="font-bold text-slate-200 block text-xs">Sözel Yetenek</span>
-<span class="text-[10px] text-slate-400">15 Soru (Ort: 8.3)</span>
+<div class="rk-exam-block rk-oabt-inputs">
+  <div class="rk-exam-heading"><div><h3>PDR ÖABT</h3><span>50 soru · %50 ağırlık</span></div><span class="rk-exam-tag">Alan testi</span></div>
+  <div class="rk-score-columns" aria-hidden="true"><span>Test</span><div><span>Doğru</span><span>Yanlış</span><span>Net</span></div></div>
+  <div class="rk-score-row"><div class="rk-score-subject"><strong>Rehberlik / PDR</strong><small>En fazla 50 soru</small></div><div class="rk-score-entry"><div class="dy-group rk-score-dy"><label class="rk-input-label"><span>Doğru</span><input aria-label="PDR ÖABT doğru sayısı" inputmode="numeric" class="rk-score-input w-full bg-slate-950 border border-slate-700/80 rounded-2xl px-3 py-2 text-sm text-emerald-400 font-bold focus:border-purple-500 outline-none" id="oabt-d" max="50" min="0" oninput="handleInputChange()" placeholder="0" type="number"/></label><label class="rk-input-label"><span>Yanlış</span><input aria-label="PDR ÖABT yanlış sayısı" inputmode="numeric" class="rk-score-input w-full bg-slate-950 border border-slate-700/80 rounded-2xl px-3 py-2 text-sm text-rose-400 font-bold focus:border-purple-500 outline-none" id="oabt-y" max="50" min="0" oninput="handleInputChange()" placeholder="0" type="number"/></label></div><div class="net-group hidden"><input class="w-full bg-slate-950 border border-slate-700/80 rounded-2xl px-3 py-2 text-sm text-purple-300 font-bold focus:border-purple-500 outline-none" id="oabt-net" max="50" min="-12.5" oninput="handleInputChange()" placeholder="0 - 50 Net" step="0.25" type="number"/></div><span class="rk-score-value" id="net-oabt" aria-label="PDR ÖABT neti">0.00 Net</span></div></div>
 </div>
-<div class="flex items-center gap-1.5 w-1/2 justify-end">
-<div class="dy-group flex items-center gap-1">
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="sozel-d" max="15" min="0" oninput="handleInputChange()" placeholder="D" type="number"/>
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="sozel-y" max="15" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/>
-</div>
-<div class="net-group hidden">
-<input class="w-20 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-indigo-300 font-bold focus:border-indigo-500 outline-none" id="sozel-net" max="15" min="-3.75" oninput="handleInputChange()" placeholder="Net" step="0.25" type="number"/>
-</div>
-<span class="text-xs font-extrabold text-slate-200 w-9 text-right font-mono" id="net-sozel">0.0</span>
-</div>
-</div>
-<!-- Sayısal -->
-<div class="bg-slate-950/50 hover:bg-slate-950/80 p-2.5 rounded-2xl border border-slate-800/60 flex items-center justify-between gap-2 transition-colors">
-<div class="w-1/2">
-<span class="font-bold text-slate-200 block text-xs">Sayısal Yetenek</span>
-<span class="text-[10px] text-slate-400">15 Soru (Ort: 3.4)</span>
-</div>
-<div class="flex items-center gap-1.5 w-1/2 justify-end">
-<div class="dy-group flex items-center gap-1">
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="sayisal-d" max="15" min="0" oninput="handleInputChange()" placeholder="D" type="number"/>
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="sayisal-y" max="15" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/>
-</div>
-<div class="net-group hidden">
-<input class="w-20 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-indigo-300 font-bold focus:border-indigo-500 outline-none" id="sayisal-net" max="15" min="-3.75" oninput="handleInputChange()" placeholder="Net" step="0.25" type="number"/>
-</div>
-<span class="text-xs font-extrabold text-slate-200 w-9 text-right font-mono" id="net-sayisal">0.0</span>
-</div>
-</div>
-<!-- Tarih -->
-<div class="bg-slate-950/50 hover:bg-slate-950/80 p-2.5 rounded-2xl border border-slate-800/60 flex items-center justify-between gap-2 transition-colors">
-<div class="w-1/2">
-<span class="font-bold text-slate-200 block text-xs">Tarih</span>
-<span class="text-[10px] text-slate-400">6 Soru (Ort: 2.7)</span>
-</div>
-<div class="flex items-center gap-1.5 w-1/2 justify-end">
-<div class="dy-group flex items-center gap-1">
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="tarih-d" max="6" min="0" oninput="handleInputChange()" placeholder="D" type="number"/>
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="tarih-y" max="6" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/>
-</div>
-<div class="net-group hidden">
-<input class="w-20 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-indigo-300 font-bold focus:border-indigo-500 outline-none" id="tarih-net" max="6" min="-1.5" oninput="handleInputChange()" placeholder="Net" step="0.25" type="number"/>
-</div>
-<span class="text-xs font-extrabold text-slate-200 w-9 text-right font-mono" id="net-tarih">0.0</span>
-</div>
-</div>
-<!-- Coğrafya -->
-<div class="bg-slate-950/50 hover:bg-slate-950/80 p-2.5 rounded-2xl border border-slate-800/60 flex items-center justify-between gap-2 transition-colors">
-<div class="w-1/2">
-<span class="font-bold text-slate-200 block text-xs">Türkiye Coğrafyası</span>
-<span class="text-[10px] text-slate-400">6 Soru (Ort: 2.2)</span>
-</div>
-<div class="flex items-center gap-1.5 w-1/2 justify-end">
-<div class="dy-group flex items-center gap-1">
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="cografya-d" max="6" min="0" oninput="handleInputChange()" placeholder="D" type="number"/>
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="cografya-y" max="6" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/>
-</div>
-<div class="net-group hidden">
-<input class="w-20 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-indigo-300 font-bold focus:border-indigo-500 outline-none" id="cografya-net" max="6" min="-1.5" oninput="handleInputChange()" placeholder="Net" step="0.25" type="number"/>
-</div>
-<span class="text-xs font-extrabold text-slate-200 w-9 text-right font-mono" id="net-cografya">0.0</span>
-</div>
-</div>
-<!-- Eğitim Bilimleri -->
-<div class="bg-slate-950/50 hover:bg-slate-950/80 p-2.5 rounded-2xl border border-slate-800/60 flex items-center justify-between gap-2 transition-colors">
-<div class="w-1/2">
-<span class="font-bold text-slate-200 block text-xs">Eğitim Bilimleri &amp; TMES</span>
-<span class="text-[10px] text-slate-400">30 Soru (Ort: 11.2)</span>
-</div>
-<div class="flex items-center gap-1.5 w-1/2 justify-end">
-<div class="dy-group flex items-center gap-1">
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="egitim-d" max="30" min="0" oninput="handleInputChange()" placeholder="D" type="number"/>
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="egitim-y" max="30" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/>
-</div>
-<div class="net-group hidden">
-<input class="w-20 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-indigo-300 font-bold focus:border-indigo-500 outline-none" id="egitim-net" max="30" min="-7.5" oninput="handleInputChange()" placeholder="Net" step="0.25" type="number"/>
-</div>
-<span class="text-xs font-extrabold text-slate-200 w-9 text-right font-mono" id="net-egitim">0.0</span>
-</div>
-</div>
-<!-- Mevzuat -->
-<div class="bg-slate-950/50 hover:bg-slate-950/80 p-2.5 rounded-2xl border border-slate-800/60 flex items-center justify-between gap-2 transition-colors">
-<div class="w-1/2">
-<span class="font-bold text-slate-200 block text-xs">Mevzuat (ÖMK 7528)</span>
-<span class="text-[10px] text-slate-400">8 Soru (Ort: 2.5)</span>
-</div>
-<div class="flex items-center gap-1.5 w-1/2 justify-end">
-<div class="dy-group flex items-center gap-1">
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="mevzuat-d" max="8" min="0" oninput="handleInputChange()" placeholder="D" type="number"/>
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="mevzuat-y" max="8" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/>
-</div>
-<div class="net-group hidden">
-<input class="w-20 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-indigo-300 font-bold focus:border-indigo-500 outline-none" id="mevzuat-net" max="8" min="-2.0" oninput="handleInputChange()" placeholder="Net" step="0.25" type="number"/>
-</div>
-<span class="text-xs font-extrabold text-slate-200 w-9 text-right font-mono" id="net-mevzuat">0.0</span>
-</div>
-</div>
-</div>
-</div>
-<!-- ÖABT Rehberlik Kartı -->
-<div class="bg-purple-950/25 backdrop-blur-xl border border-purple-800/40 rounded-3xl p-4 shadow-xl">
-<div class="flex justify-between items-center mb-2.5 pb-2 border-b border-purple-800/40">
-<h2 class="text-xs font-bold text-purple-300 flex items-center gap-1.5">
-<span>🎯 ÖABT Rehberlik / PDR (%50)</span>
-</h2>
-<span class="text-[11px] text-purple-300 bg-purple-900/60 border border-purple-600/40 px-2.5 py-0.5 rounded-lg font-bold font-mono" id="net-oabt">0.00 Net</span>
-</div>
-<div class="dy-group grid grid-cols-2 gap-2 text-xs">
-<div>
-<label class="block text-[10px] font-semibold text-slate-400 mb-1">Doğru Sayısı (Max 50)</label>
-<input class="w-full bg-slate-950 border border-slate-700/80 rounded-2xl px-3 py-2 text-sm text-emerald-400 font-bold focus:border-purple-500 outline-none" id="oabt-d" max="50" min="0" oninput="handleInputChange()" placeholder="0" type="number"/>
-</div>
-<div>
-<label class="block text-[10px] font-semibold text-slate-400 mb-1">Yanlış Sayısı (Max 50)</label>
-<input class="w-full bg-slate-950 border border-slate-700/80 rounded-2xl px-3 py-2 text-sm text-rose-400 font-bold focus:border-purple-500 outline-none" id="oabt-y" max="50" min="0" oninput="handleInputChange()" placeholder="0" type="number"/>
-</div>
-</div>
-<div class="net-group hidden text-xs">
-<label class="block text-[10px] font-semibold text-slate-400 mb-1">ÖABT Netiniz (Max 50)</label>
-<input class="w-full bg-slate-950 border border-slate-700/80 rounded-2xl px-3 py-2 text-sm text-purple-300 font-bold focus:border-purple-500 outline-none" id="oabt-net" max="50" min="-12.5" oninput="handleInputChange()" placeholder="0 - 50 Net" step="0.25" type="number"/>
-</div>
-</div>
-<!-- 🚀 CANLI SIRALAMAYA GÖNDER / GÜNCELLE BUTONU -->
-<button class="w-full py-3.5 px-4 rounded-2xl font-black text-white bg-gradient-to-r from-emerald-600 via-teal-600 to-indigo-600 hover:from-emerald-500 hover:to-indigo-500 shadow-xl shadow-emerald-950/40 transition-all duration-200 active:scale-[0.99] text-xs sm:text-sm tracking-wide flex items-center justify-center gap-2" id="btn-publish-live" onclick="publishToLiveLeaderboard()">
-<span>🏆 Canlı Sıralamaya Kaydet &amp; Güncelle</span>
-</button>
+<p class="rk-calculator-method" id="dy-input-notice" role="status" aria-live="polite">Net = doğru − yanlış / 4. Negatif netler korunur; doğru ve yanlış toplamı testin soru sayısını aşamaz.</p>
+<button class="rk-save-result" id="btn-publish-live" onclick="publishToLiveLeaderboard()" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h12l3 3v13H4V4h1zm3 0v6h8V4M8 20v-6h8v6"/></svg><span>Canlı sıralamaya kaydet</span></button>
 <div class="rk-stat-strip"><div class="rk-stat-card stat-p2"><span>2027 P2-10 Tahmini</span><strong id="rk-p2">--</strong></div><div class="rk-stat-card stat-rank"><span>2027 Tahmini Sıra</span><strong id="rk-rank">-- - --</strong></div><div class="rk-stat-card stat-oabt"><span>Toplam Girilen Net</span><strong id="rk-oabt">0.00</strong></div></div>
 </div><div class="rk-result-panel"><div class="bg-gradient-to-br from-indigo-950/90 via-slate-900 to-slate-950 border border-indigo-500/40 rounded-3xl p-4 sm:p-5 shadow-2xl relative overflow-hidden">
 <div class="flex flex-wrap justify-between items-start gap-2 mb-1">
@@ -687,8 +560,8 @@
       <div class="rk-ags-chart-wrap"><canvas id="rkAgsTopicChart"></canvas></div>
     </article>
     <article class="rk-ags-card">
-      <div class="rk-ags-card-head"><div><span>DAĞILIM TABLOSU</span><h3>Konu ağırlıkları</h3><p>Soru sayıları ve seçili alan içindeki yüzdelik paylar.</p></div><b>2026</b></div>
-      <div class="rk-ags-table-wrap custom-scrollbar"><table class="rk-ags-table"><thead><tr><th id="rk-ags-table-first-head">Test</th><th>Soru</th><th>Pay</th></tr></thead><tbody id="rk-ags-topic-table-body"></tbody></table></div>
+      <div class="rk-ags-card-head"><div><span>DAĞILIM TABLOSU</span><h3>Konu ağırlıkları</h3><p>Soru sayıları ve seçili alan içindeki soru payları. Puan ağırlığı değildir.</p></div><b>2026</b></div>
+      <div class="rk-ags-table-wrap custom-scrollbar"><table class="rk-ags-table"><caption class="rk-share-explanation">Soru payı = soru sayısı ÷ seçili toplam soru × 100. Yuvarlama nedeniyle toplamda küçük farklar olabilir.</caption><thead><tr><th id="rk-ags-table-first-head">Test</th><th>Soru</th><th>Soru payı</th></tr></thead><tbody id="rk-ags-topic-table-body"></tbody></table></div>
     </article>
   </div>
 </section>
@@ -789,7 +662,7 @@
 
 <script src="assets/js/20-historical-charts.js"></script>
 <script src="assets/js/21-content-flow.js?v=20260921-2"></script>
-<script src="assets/js/22-ags-topic-distribution.js"></script>
+<script src="assets/js/22-ags-topic-distribution.js?v=20261015-2"></script>
 <script src="assets/js/22-mobile-app.js"></script>
 <script src="assets/js/23-personal-analysis.js?v=20260922-3"></script>
 <script src="assets/js/24-animated-hero.js?v=20260922-1"></script>
@@ -799,3 +672,4 @@
 <link rel="stylesheet" href="assets/css/10-overview-dashboard.css?v=20260921-3">
 <link rel="stylesheet" href="assets/css/11-content-sections.css?v=20260921-2">
 <link rel="stylesheet" href="assets/css/12-footer-brand.css">
+<link rel="stylesheet" href="assets/css/17-campus-design.css?v=20261015-3">
