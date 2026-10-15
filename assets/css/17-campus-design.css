@@ -184,3 +184,54 @@ body.rk-app-body .rk-main .rk-ags-grid{grid-template-columns:1fr!important}
 body.rk-app-body .rk-main .rk-ags-chart-wrap{height:320px!important}
 
 body.rk-app-body .rk-main .rk-share-explanation{caption-side:bottom;text-align:left;padding:16px 0 0;color:var(--campus-muted);font:12px/1.65 var(--campus-font)}
+/* Aligned score-entry worksheet; no nested form cards. */
+body.rk-app-body .rk-main .rk-calculator{--score-cell:64px;--score-gap:8px;gap:20px!important}
+body.rk-app-body .rk-main .rk-calculator .rk-calculator-heading{padding:0 0 24px;margin-bottom:24px;border-bottom:1px solid var(--campus-line)}
+body.rk-app-body .rk-main .rk-calculator .rk-calculator-eyebrow{display:block;margin-bottom:10px;font:750 11px/1.5 var(--campus-font);letter-spacing:.1em;color:var(--campus-green)}
+body.rk-app-body .rk-main .rk-calculator .rk-calculator-heading h2{font:750 25px/1.3 var(--campus-font)!important;margin:0 0 10px!important;letter-spacing:-.04em!important}
+body.rk-app-body .rk-main .rk-calculator .rk-calculator-heading p{margin:0!important;font-size:14px!important;max-width:540px}
+body.rk-app-body .rk-main .rk-calculator .rk-exam-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
+body.rk-app-body .rk-main .rk-calculator .rk-exam-heading h3{margin:0 0 4px!important;font:750 16px/1.4 var(--campus-font)!important}
+body.rk-app-body .rk-main .rk-calculator .rk-exam-heading div>span{font-size:12px;color:var(--campus-muted)}
+body.rk-app-body .rk-main .rk-calculator :is(.rk-total-net,.rk-exam-tag){flex:none;padding:7px 10px;border-radius:7px;background:#edf5eb;border:0;color:var(--campus-green);font:750 12px/1.4 var(--campus-font);font-variant-numeric:tabular-nums}
+body.rk-app-body .rk-main .rk-calculator .rk-score-columns,
+body.rk-app-body .rk-main .rk-calculator .rk-score-row{display:grid!important;grid-template-columns:minmax(0,1fr) calc(var(--score-cell)*3 + var(--score-gap)*2);align-items:center;gap:16px}
+body.rk-app-body .rk-main .rk-calculator .rk-score-columns{padding:0 0 10px;border-bottom:1px solid var(--campus-line);color:var(--campus-muted);font:650 11px/1.5 var(--campus-font)}
+body.rk-app-body .rk-main .rk-calculator .rk-score-columns>div{display:grid;grid-template-columns:repeat(3,var(--score-cell));gap:var(--score-gap);text-align:center}
+body.rk-app-body .rk-main .rk-calculator .rk-score-row{min-height:78px;padding:14px 0;border-bottom:1px solid #e7eee6;background:transparent;border-radius:0}
+body.rk-app-body .rk-main .rk-calculator .rk-score-rows .rk-score-row:last-child{border-bottom:0}
+body.rk-app-body .rk-main .rk-calculator .rk-score-subject{display:grid;gap:4px;min-width:0}
+body.rk-app-body .rk-main .rk-calculator .rk-score-subject strong{font:650 14px/1.4 var(--campus-font);color:var(--campus-ink)}
+body.rk-app-body .rk-main .rk-calculator .rk-score-subject small{font-size:11px!important;line-height:1.4!important}
+body.rk-app-body .rk-main .rk-calculator .rk-score-entry{display:flex;align-items:center;justify-content:flex-end;gap:var(--score-gap);min-width:0}
+body.rk-app-body .rk-main .rk-calculator .rk-score-dy{display:flex;align-items:center!important;gap:var(--score-gap)!important}
+body.rk-app-body .rk-main .rk-calculator .rk-input-label{display:block;position:relative;width:var(--score-cell)}
+body.rk-app-body .rk-main .rk-calculator .rk-input-label>span{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+body.rk-app-body .rk-main .rk-calculator input[type=number]{appearance:textfield!important;width:var(--score-cell)!important;min-width:0!important;max-width:100%!important;height:46px!important;margin:0!important;padding:9px 6px!important;border:1px solid #c8d8ca!important;border-radius:8px!important;background:#fff!important;color:var(--campus-ink)!important;box-shadow:none!important;text-align:center!important;font:650 16px/1 var(--campus-font)!important;font-variant-numeric:tabular-nums}
+body.rk-app-body .rk-main .rk-calculator input[type=number]:focus{background:#f3f8f1!important;border-color:var(--campus-green)!important;outline:2px solid #1e64471a!important;outline-offset:1px!important}
+body.rk-app-body .rk-main .rk-calculator .rk-score-value{display:block!important;flex:0 0 var(--score-cell);width:var(--score-cell)!important;padding:0!important;text-align:center!important;color:var(--campus-green)!important;font:750 14px/1.4 var(--campus-font)!important;font-variant-numeric:tabular-nums;white-space:normal!important}
+body.rk-app-body .rk-main .rk-calculator .rk-oabt-inputs{border-top:1px solid var(--campus-line)!important;padding-top:22px!important}
+body.rk-app-body .rk-main .rk-calculator .rk-calculator-method{font-size:12px!important;margin:0!important;padding-top:4px!important}
+body.rk-app-body .rk-main .rk-calculator #btn-publish-live{display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px!important;padding:11px 16px!important;border:1px solid #c8d8ca!important;border-radius:8px!important;background:#f2f7f0!important;color:var(--campus-green)!important;box-shadow:none!important;font:750 13px/1.4 var(--campus-font)!important}
+body.rk-app-body .rk-main .rk-calculator #btn-publish-live:hover{background:#e5f0e3!important;border-color:var(--campus-green)!important}
+body.rk-app-body .rk-main .rk-calculator #btn-publish-live svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linejoin:round}
+@media(max-width:680px){
+ body.rk-app-body .rk-main .rk-calculator{--score-cell:54px;--score-gap:6px;gap:18px!important}
+ body.rk-app-body .rk-main .rk-calculator .rk-score-columns,
+ body.rk-app-body .rk-main .rk-calculator .rk-score-row{gap:10px}
+ body.rk-app-body .rk-main .rk-calculator .rk-score-subject strong{font-size:13px}
+ body.rk-app-body .rk-main .rk-calculator .rk-calculator-heading h2{font-size:23px!important}
+ body.rk-app-body .rk-main .rk-calculator .rk-score-row{min-height:78px}
+}
+@media(max-width:360px){
+ body.rk-app-body .rk-main .rk-calculator{--score-cell:48px;--score-gap:5px}
+ body.rk-app-body .rk-main .rk-calculator .rk-score-subject strong{font-size:12px}
+}
+body.rk-app-body #rk-score-rows{display:block!important}
+body.rk-app-body #rk-score-rows .rk-score-row{display:grid!important;min-height:78px!important;padding:14px 0!important;grid-template-columns:minmax(0,1fr) calc(var(--score-cell)*3 + var(--score-gap)*2);gap:16px!important}
+body.rk-app-body #rk-score-rows .rk-score-subject,
+body.rk-app-body #rk-score-rows .rk-score-entry{width:auto!important;min-width:0!important}
+body.rk-app-body #rk-score-rows .rk-score-entry{flex:initial!important;gap:var(--score-gap)!important}
+body.rk-app-body #dy-input-notice{font:12px/1.65 var(--campus-font)!important;background:transparent!important;border:0!important;padding:0!important;margin:0!important}
+@media(max-width:680px){body.rk-app-body #rk-score-rows .rk-score-row{gap:10px!important}}
+body.rk-app-body #net-oabt.rk-score-value{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important}

@@ -3,8 +3,8 @@
   "edits": {
     "index.html": {
       "baseline_sha256": "baae5a4d6a97ec97687b5d57e530823898fd5e22d50c0dc7d882286cbbfa2454",
-      "reviewed_sha256": "8088d3d97b90ab363b7cfad11ddee7e52f7ec6ce79b46cf39fad86e61e502c43",
-      "reason": "User-requested campus design, readable spacing and static favicon; calculation/analysis/auth scripts and data preserved",
+      "reviewed_sha256": "5fa0d2f7f2c3c63a80d3c032cf6ec2345594b0401db981cae89eba793ef0637a",
+      "reason": "User-requested professional, compact score-entry layout; input IDs, limits, input handlers, score/ranking algorithms, analysis data and publish handler preserved",
       "runtime_sha256": "e04dd9c07bc9d2d7e747b816c75b9374a243bad4364b504597c566788c471564"
     },
     "sitemap.xml": {
