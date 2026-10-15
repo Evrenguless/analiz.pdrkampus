@@ -18,8 +18,8 @@
 <meta property="og:image" content="https://analiz.pdrkampus.com/assets/img/pdrkampus-logo.png"/>
 <!-- Favicon -->
 <link rel="stylesheet" href="assets/css/00-logo-asset.css">
-<link id="rk-favicon" rel="icon" type="image/png"/>
-<link id="rk-apple-touch-icon" rel="apple-touch-icon"/>
+<link id="rk-favicon" rel="icon" type="image/svg+xml" href="assets/img/favicon.svg"/>
+<link id="rk-apple-touch-icon" rel="apple-touch-icon" href="assets/img/pdrkampus-logo.png"/>
 <script src="assets/js/00-favicon.js"></script>
 <!-- Tailwind CSS CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
@@ -28,7 +28,7 @@
 <!-- Supabase JS SDK -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="assets/css/01-base.css">
 <script src="assets/js/01-navigation.js"></script>
 <link rel="stylesheet" href="assets/css/02-layout.css">
@@ -202,8 +202,8 @@
 </div>
 <div class="flex items-center gap-1.5 w-1/2 justify-end">
 <div class="dy-group flex items-center gap-1">
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="sozel-d" max="15" min="0" oninput="handleInputChange()" placeholder="D" type="number"/>
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="sozel-y" max="15" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/>
+<label class="rk-input-label"><span>Doğru</span><input aria-label="Sözel Yetenek doğru sayısı" class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="sozel-d" max="15" min="0" oninput="handleInputChange()" placeholder="D" type="number"/></label>
+<label class="rk-input-label"><span>Yanlış</span><input aria-label="Sözel Yetenek yanlış sayısı" class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="sozel-y" max="15" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/></label>
 </div>
 <div class="net-group hidden">
 <input class="w-20 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-indigo-300 font-bold focus:border-indigo-500 outline-none" id="sozel-net" max="15" min="-3.75" oninput="handleInputChange()" placeholder="Net" step="0.25" type="number"/>
@@ -219,8 +219,8 @@
 </div>
 <div class="flex items-center gap-1.5 w-1/2 justify-end">
 <div class="dy-group flex items-center gap-1">
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="sayisal-d" max="15" min="0" oninput="handleInputChange()" placeholder="D" type="number"/>
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="sayisal-y" max="15" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/>
+<label class="rk-input-label"><span>Doğru</span><input aria-label="Sayısal Yetenek doğru sayısı" class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="sayisal-d" max="15" min="0" oninput="handleInputChange()" placeholder="D" type="number"/></label>
+<label class="rk-input-label"><span>Yanlış</span><input aria-label="Sayısal Yetenek yanlış sayısı" class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="sayisal-y" max="15" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/></label>
 </div>
 <div class="net-group hidden">
 <input class="w-20 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-indigo-300 font-bold focus:border-indigo-500 outline-none" id="sayisal-net" max="15" min="-3.75" oninput="handleInputChange()" placeholder="Net" step="0.25" type="number"/>
@@ -236,8 +236,8 @@
 </div>
 <div class="flex items-center gap-1.5 w-1/2 justify-end">
 <div class="dy-group flex items-center gap-1">
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="tarih-d" max="6" min="0" oninput="handleInputChange()" placeholder="D" type="number"/>
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="tarih-y" max="6" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/>
+<label class="rk-input-label"><span>Doğru</span><input aria-label="Tarih doğru sayısı" class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="tarih-d" max="6" min="0" oninput="handleInputChange()" placeholder="D" type="number"/></label>
+<label class="rk-input-label"><span>Yanlış</span><input aria-label="Tarih yanlış sayısı" class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="tarih-y" max="6" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/></label>
 </div>
 <div class="net-group hidden">
 <input class="w-20 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-indigo-300 font-bold focus:border-indigo-500 outline-none" id="tarih-net" max="6" min="-1.5" oninput="handleInputChange()" placeholder="Net" step="0.25" type="number"/>
@@ -253,8 +253,8 @@
 </div>
 <div class="flex items-center gap-1.5 w-1/2 justify-end">
 <div class="dy-group flex items-center gap-1">
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="cografya-d" max="6" min="0" oninput="handleInputChange()" placeholder="D" type="number"/>
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="cografya-y" max="6" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/>
+<label class="rk-input-label"><span>Doğru</span><input aria-label="Türkiye Coğrafyası doğru sayısı" class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="cografya-d" max="6" min="0" oninput="handleInputChange()" placeholder="D" type="number"/></label>
+<label class="rk-input-label"><span>Yanlış</span><input aria-label="Türkiye Coğrafyası yanlış sayısı" class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="cografya-y" max="6" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/></label>
 </div>
 <div class="net-group hidden">
 <input class="w-20 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-indigo-300 font-bold focus:border-indigo-500 outline-none" id="cografya-net" max="6" min="-1.5" oninput="handleInputChange()" placeholder="Net" step="0.25" type="number"/>
@@ -270,8 +270,8 @@
 </div>
 <div class="flex items-center gap-1.5 w-1/2 justify-end">
 <div class="dy-group flex items-center gap-1">
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="egitim-d" max="30" min="0" oninput="handleInputChange()" placeholder="D" type="number"/>
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="egitim-y" max="30" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/>
+<label class="rk-input-label"><span>Doğru</span><input aria-label="Eğitim Bilimleri ve TMES doğru sayısı" class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="egitim-d" max="30" min="0" oninput="handleInputChange()" placeholder="D" type="number"/></label>
+<label class="rk-input-label"><span>Yanlış</span><input aria-label="Eğitim Bilimleri ve TMES yanlış sayısı" class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="egitim-y" max="30" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/></label>
 </div>
 <div class="net-group hidden">
 <input class="w-20 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-indigo-300 font-bold focus:border-indigo-500 outline-none" id="egitim-net" max="30" min="-7.5" oninput="handleInputChange()" placeholder="Net" step="0.25" type="number"/>
@@ -287,8 +287,8 @@
 </div>
 <div class="flex items-center gap-1.5 w-1/2 justify-end">
 <div class="dy-group flex items-center gap-1">
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="mevzuat-d" max="8" min="0" oninput="handleInputChange()" placeholder="D" type="number"/>
-<input class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="mevzuat-y" max="8" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/>
+<label class="rk-input-label"><span>Doğru</span><input aria-label="Mevzuat doğru sayısı" class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-emerald-400 font-bold focus:border-indigo-500 outline-none" id="mevzuat-d" max="8" min="0" oninput="handleInputChange()" placeholder="D" type="number"/></label>
+<label class="rk-input-label"><span>Yanlış</span><input aria-label="Mevzuat yanlış sayısı" class="w-11 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-rose-400 font-bold focus:border-indigo-500 outline-none" id="mevzuat-y" max="8" min="0" oninput="handleInputChange()" placeholder="Y" type="number"/></label>
 </div>
 <div class="net-group hidden">
 <input class="w-20 bg-slate-900 border border-slate-700/80 rounded-xl p-1.5 text-center text-xs text-indigo-300 font-bold focus:border-indigo-500 outline-none" id="mevzuat-net" max="8" min="-2.0" oninput="handleInputChange()" placeholder="Net" step="0.25" type="number"/>
@@ -799,3 +799,4 @@
 <link rel="stylesheet" href="assets/css/10-overview-dashboard.css?v=20260921-3">
 <link rel="stylesheet" href="assets/css/11-content-sections.css?v=20260921-2">
 <link rel="stylesheet" href="assets/css/12-footer-brand.css">
+<link rel="stylesheet" href="assets/css/17-campus-design.css?v=20261015-1">

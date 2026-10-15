@@ -3,8 +3,8 @@
   "edits": {
     "index.html": {
       "baseline_sha256": "baae5a4d6a97ec97687b5d57e530823898fd5e22d50c0dc7d882286cbbfa2454",
-      "reviewed_sha256": "bac393fd75926060442f9a7f63554c07f1132e733f89d6fa6d4e9169b4e396cb",
-      "reason": "User-requested arrow-free menu styling; application scripts and source data preserved",
+      "reviewed_sha256": "680ebb772081c4cf819c630069e1fa35e3231171bf5d89cbc3754292e3e6af2f",
+      "reason": "User-requested campus design, readable spacing and static favicon; calculation/analysis/auth scripts and data preserved",
       "runtime_sha256": "35b72a37bc8bee1d8efa2b690806e4d620ad21cc2c42e7e2b3ca8a9b13be476f"
     },
     "sitemap.xml": {
@@ -14,9 +14,14 @@
     },
     "404.html": {
       "baseline_sha256": "45026f0b37a404db173a71d5516e13cd62a25a938b16109575cddc16685b781f",
-      "reviewed_sha256": "c5d23f75faa78698b856715ea45b178b725442ac557a46eec415cbc47ac87927",
-      "reason": "User-authorized cross-platform navigation and contextual links; source data and calculations preserved",
+      "reviewed_sha256": "2f34ccb7de4a64ca5c901bfb1f4b644991d890c9cd3cc8bcd4e85d242564996a",
+      "reason": "User-requested campus design, readable spacing and static favicon; calculation/analysis/auth scripts and data preserved",
       "runtime_sha256": "681ab10b71d9254dd284dedda30f382729404ab95b1e2fe5c126b9685c26ba40"
+    },
+    "assets/js/00-favicon.js": {
+      "baseline_sha256": "e54386b57b3c211c7f1c231264e33e36569938686ebd4ac8b8c4f8b1374f0f93",
+      "reviewed_sha256": "5ac35740ef78903d402012fb688521da3f099058606812330424da7c04120316",
+      "reason": "User-requested campus design, readable spacing and static favicon; calculation/analysis/auth scripts and data preserved"
     }
   }
 }
