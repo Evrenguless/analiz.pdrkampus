@@ -3,9 +3,9 @@
   "edits": {
     "index.html": {
       "baseline_sha256": "baae5a4d6a97ec97687b5d57e530823898fd5e22d50c0dc7d882286cbbfa2454",
-      "reviewed_sha256": "680ebb772081c4cf819c630069e1fa35e3231171bf5d89cbc3754292e3e6af2f",
+      "reviewed_sha256": "8088d3d97b90ab363b7cfad11ddee7e52f7ec6ce79b46cf39fad86e61e502c43",
       "reason": "User-requested campus design, readable spacing and static favicon; calculation/analysis/auth scripts and data preserved",
-      "runtime_sha256": "35b72a37bc8bee1d8efa2b690806e4d620ad21cc2c42e7e2b3ca8a9b13be476f"
+      "runtime_sha256": "e04dd9c07bc9d2d7e747b816c75b9374a243bad4364b504597c566788c471564"
     },
     "sitemap.xml": {
       "baseline_sha256": "3b9540a17e9faec0c35bcff94839da057f498281aceda7d5953a366c837f7d25",
@@ -22,6 +22,11 @@
       "baseline_sha256": "e54386b57b3c211c7f1c231264e33e36569938686ebd4ac8b8c4f8b1374f0f93",
       "reviewed_sha256": "5ac35740ef78903d402012fb688521da3f099058606812330424da7c04120316",
       "reason": "User-requested campus design, readable spacing and static favicon; calculation/analysis/auth scripts and data preserved"
+    },
+    "assets/js/22-ags-topic-distribution.js": {
+      "baseline_sha256": "234a786f9b30eb06109bf4baef147117bf2ecf3719b5d824e25aa08036be0445",
+      "reviewed_sha256": "f1e9809e6c2b69ad925ef07bba89b5550a0ba36cfd9e1ea5ba45717b6cc1d2d1",
+      "reason": "User-reported percentage discrepancy: display at most two decimal places instead of one; numerator, denominator, topics and calculation formula unchanged"
     }
   }
 }

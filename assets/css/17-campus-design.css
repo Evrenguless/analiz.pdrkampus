@@ -182,3 +182,5 @@ body.rk-app-body .rk-main :is(#tab-overview,#tab-simulator,#tab-matches,#tab-lea
 /* The topic table gets a complete row instead of sharing half the page with its chart. */
 body.rk-app-body .rk-main .rk-ags-grid{grid-template-columns:1fr!important}
 body.rk-app-body .rk-main .rk-ags-chart-wrap{height:320px!important}
+
+body.rk-app-body .rk-main .rk-share-explanation{caption-side:bottom;text-align:left;padding:16px 0 0;color:var(--campus-muted);font:12px/1.65 var(--campus-font)}

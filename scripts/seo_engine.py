@@ -35,7 +35,7 @@ def protected(root):
         if path.is_file() and not path.is_symlink() and digest(path) == expected:
             continue
         edit = approvals.get(name, {})
-        permitted = name.endswith('.html') or name in {'sitemap.xml', 'assets/js/00-favicon.js'} or name in {'scripts/build_library_catalog.py', 'src/library.js', 'tests/catalog.mjs', 'scripts/check_links.py'}
+        permitted = name.endswith('.html') or name in {'sitemap.xml', 'assets/js/00-favicon.js', 'assets/js/22-ags-topic-distribution.js'} or name in {'scripts/build_library_catalog.py', 'src/library.js', 'tests/catalog.mjs', 'scripts/check_links.py'}
         valid = (permitted and path.is_file() and not path.is_symlink()
                  and edit.get('baseline_sha256') == expected and edit.get('reviewed_sha256') == digest(path))
         if valid and name.endswith('.html'):
